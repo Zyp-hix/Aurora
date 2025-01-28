@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Good. Get Aurora</title>
+    <title>Polis - Aurora</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #0f0f0f; /* Dark background for a clean look */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: #1e1e1e;
+            color: white;
             text-align: center;
-            overflow: hidden;
         }
 
-        /* Ultra-clean Aurora Sky with softer animation */
         .background {
             position: fixed;
             top: 0;
@@ -28,89 +24,54 @@
             background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 204, 204, 0.15), rgba(0, 102, 255, 0.1), rgba(153, 51, 255, 0.15));
             background-size: 200% 200%;
             animation: auroraAnimation 15s ease-in-out infinite;
-            z-index: -1; /* Make sure background stays behind everything else */
+            z-index: -1;
         }
 
-        /* Smoother animation for the aurora sky */
         @keyframes auroraAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Subtle Particle Effect - Stars */
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/starfield.png') repeat;
-            pointer-events: none;
-            opacity: 0.2;
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
         }
 
-        /* Centered, cleaner content */
-        .content {
-            color: white;
-            font-size: 2.5rem;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Subtle glow */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .tab-content {
+            background-color: #222;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
-        .content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-weight: 400; /* Light font weight for elegance */
-            letter-spacing: 2px;
+        .highlight {
+            color: #00bcd4;
         }
 
-        .content p {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 20px;
         }
 
-        /* Button container */
-        .button-container {
-            margin-top: 20px; /* Add space between text and buttons */
-        }
-
-        /* Clean button styles */
         .btn {
+            margin-top: 30px;
             padding: 12px 30px;
-            margin: 10px;
             font-size: 1.3rem;
             color: white;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.7), rgba(0, 102, 255, 0.7));
+            background: #00bcd4;
             border: none;
             border-radius: 30px;
-            cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
-        /* Clean hover effect for buttons */
         .btn:hover {
-            background: linear-gradient(135deg, rgba(0, 204, 204, 1), rgba(0, 102, 255, 1));
-            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            background: #0097a7;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
             transform: scale(1.05);
-        }
-
-        /* Discord button with a smoother look */
-        .discord-btn {
-            background: linear-gradient(135deg, #7289da, #5b6e8f);
-            border-color: #5b6e8f;
-        }
-
-        .discord-btn:hover {
-            background: linear-gradient(135deg, #5b6e8f, #7289da);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
         }
     </style>
 </head>
@@ -119,22 +80,28 @@
     <!-- Background Aurora Sky -->
     <div class="background"></div>
 
-    <!-- Stars Overlay for texture -->
-    <div class="stars"></div>
+    <h1>Welcome to Polis</h1>
 
-    <!-- Content -->
-    <div class="content">
-        <h1>Get Good. Get Aurora.</h1>
-        <p>Elevate your experience with the power of Aurora.</p>
-        
-        <!-- Button Container -->
-        <div class="button-container">
-            <!-- Download Button that links to a file in the same folder -->
-            <a href="AuroraInstaller.exe" class="btn" download>Download</a>
-            <!-- Discord Button -->
-            <a href="https://discord.gg/yourdiscordlink" class="btn discord-btn">Join Discord</a>
-        </div>
+    <!-- Refund Policy Section -->
+    <div class="tab-content">
+        <h2 class="highlight">Refund Policy</h2>
+        <p>Once you purchase and activate Aurora, it is non-refundable. Please ensure you fully understand the terms before purchasing.</p>
     </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="tab-content">
+        <h2 class="highlight">Why Choose Aurora?</h2>
+        <p>Aurora offers the most secure and undetected cheat experience. We prioritize safety and performance with constant updates and top-tier support.</p>
+    </div>
+
+    <!-- Undetected Status Section -->
+    <div class="tab-content">
+        <h2 class="highlight">Undetected Status</h2>
+        <p>Aurora has been tested rigorously to ensure it's undetected by anti-cheat systems. You can trust us for a seamless and safe experience.</p>
+    </div>
+
+    <!-- Back to Homepage Button -->
+    <a href="index.html" class="btn">Back to Homepage</a>
 
 </body>
 </html>
