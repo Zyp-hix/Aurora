@@ -3,113 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polis Tab Example</title>
+    <title>Get Good. Get Aurora</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: white;
+        body, html {
             margin: 0;
             padding: 0;
-        }
-
-        /* Tab styles */
-        .tabs {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            background-color: #333;
-            padding: 10px;
-        }
-
-        .tab {
-            padding: 10px 20px;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            background-color: #444;
-            transition: background-color 0.3s ease;
-        }
-
-        .tab:hover {
-            background-color: #555;
-        }
-
-        .active-tab {
-            background-color: #00bcd4;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
             color: white;
         }
 
-        /* Tab Content */
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background-color: #222;
-            border-top: 1px solid #444;
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 204, 204, 0.15), rgba(0, 102, 255, 0.1), rgba(153, 51, 255, 0.15));
+            background-size: 200% 200%;
+            animation: auroraAnimation 15s ease-in-out infinite;
+            z-index: -1;
         }
 
-        .tab-content.active-content {
-            display: block;
+        @keyframes auroraAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* Add some styling for headings */
-        h2 {
-            color: #00bcd4;
+        .content {
+            color: white;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #ccc;
+        .content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 2px;
         }
 
-        .highlight {
-            color: #ff4081;
+        .content p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            margin: 10px;
+            font-size: 1.3rem;
+            color: white;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.7), rgba(0, 102, 255, 0.7));
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, rgba(0, 204, 204, 1), rgba(0, 102, 255, 1));
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        .discord-btn {
+            background: linear-gradient(135deg, #7289da, #5b6e8f);
+            border-color: #5b6e8f;
+        }
+
+        .discord-btn:hover {
+            background: linear-gradient(135deg, #5b6e8f, #7289da);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+        }
+
+        /* Polis Button */
+        .polis-btn {
+            padding: 12px 30px;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: white;
+            background: #8e44ad;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .polis-btn:hover {
+            background: #9b59b6;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
-    <!-- Tab Navigation -->
-    <div class="tabs">
-        <div class="tab active-tab" onclick="showTab(0)">Refund Policy</div>
-        <div class="tab" onclick="showTab(1)">Why Choose Us</div>
-        <div class="tab" onclick="showTab(2)">Undetected Status</div>
+    <!-- Background Aurora Sky -->
+    <div class="background"></div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <h1>Get Good. Get Aurora.</h1>
+        <p>Elevate your experience with the power of Aurora.</p>
+        
+        <div class="button-container">
+            <a href="AuroraInstaller.exe" class="btn" download>Download</a>
+            <a href="https://discord.gg/yourdiscordlink" class="btn discord-btn">Join Discord</a>
+        </div>
+
+        <!-- Polis Button -->
+        <a href="police.html" class="polis-btn">Visit Polis</a>
     </div>
-
-    <!-- Tab Content -->
-    <div class="tab-content active-content">
-        <h2>Refund Policy</h2>
-        <p>Once you purchase and activate Aurora, it is non-refundable. Please make sure you fully understand the terms before making a purchase.</p>
-        <p>If you experience any issues, contact our support team immediately. We cannot provide refunds for any reason once the product is activated.</p>
-    </div>
-
-    <div class="tab-content">
-        <h2>Why Choose Us?</h2>
-        <p>At Aurora, we offer a superior experience with unmatched performance and reliability. Our cheat is constantly updated, and we pride ourselves on providing excellent customer support. Choose Aurora for an undetected, seamless experience.</p>
-        <p>Unlike other providers, we ensure your safety and gaming experience are top priorities. Join the hundreds of satisfied users who trust Aurora!</p>
-    </div>
-
-    <div class="tab-content">
-        <h2>Undetected Status</h2>
-        <p>Our cheat is undetected and has been thoroughly tested to ensure it works without detection by anti-cheat systems.</p>
-        <p>We take regular precautions and updates to keep the cheat secure and undetected for as long as possible. Our community enjoys a safe and seamless experience, and we ensure that all measures are taken to keep you protected.</p>
-    </div>
-
-    <script>
-        // Function to switch between tabs
-        function showTab(tabIndex) {
-            // Get all tab contents and remove the active class
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active-content'));
-
-            // Get all tabs and remove the active class
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active-tab'));
-
-            // Add the active class to the selected tab and its content
-            contents[tabIndex].classList.add('active-content');
-            tabs[tabIndex].classList.add('active-tab');
-        }
-    </script>
 
 </body>
 </html>
