@@ -25,17 +25,29 @@
             animation: auroraAnimation 15s ease-in-out infinite;
         }
 
-        /* Ultra-smooth animation for the aurora sky */
+        /* Smoother animation for the aurora sky */
         @keyframes auroraAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
+        /* Subtle Particle Effect - Stars */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/starfield.png') repeat;
+            pointer-events: none;
+            opacity: 0.2;
+        }
+
         /* Centered, cleaner content */
         .content {
             position: absolute;
-            top: 20%;
+            top: 20%; /* Keep text a bit higher */
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -46,9 +58,24 @@
 
         .content h1 {
             font-size: 3.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             font-weight: 400; /* Light font weight for elegance */
             letter-spacing: 2px;
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        /* Add more spacing for buttons */
+        .button-container {
+            position: absolute;
+            top: 45%; /* Move buttons lower than the text */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
         }
 
         /* Clean button styles */
@@ -90,9 +117,17 @@
     <!-- Background Aurora Sky -->
     <div class="background"></div>
 
+    <!-- Stars Overlay for texture -->
+    <div class="stars"></div>
+
     <!-- Content -->
     <div class="content">
         <h1>Get Good. Get Aurora.</h1>
+        <p>Elevate your experience with the power of Aurora.</p>
+    </div>
+
+    <!-- Button Container moved lower -->
+    <div class="button-container">
         <!-- Download Button that links to a file in the same folder -->
         <a href="AuroraInstaller.exe" class="btn" download>Download</a>
         <!-- Discord Button -->
