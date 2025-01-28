@@ -12,17 +12,23 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Background aurora sky */
+        /* Animated Aurora Sky (Gradient and keyframes) */
         .background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://example.com/aurora-sky.jpg'); /* Replace with your aurora sky image URL */
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.6);
+            background: linear-gradient(270deg, rgba(0, 255, 255, 0.6), rgba(0, 204, 204, 0.6), rgba(0, 102, 255, 0.6), rgba(153, 51, 255, 0.6));
+            background-size: 400% 400%;
+            animation: auroraAnimation 10s ease-in-out infinite;
+        }
+
+        /* Animation for Aurora Effect */
+        @keyframes auroraAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Centering the content */
@@ -33,37 +39,46 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
         }
 
         .content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            margin-bottom: 30px;
         }
 
+        /* Aurora-Inspired Buttons */
         .btn {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 1.2rem;
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 1.5rem;
             color: white;
-            background-color: #3b5998;
-            border: none;
-            border-radius: 5px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 1), rgba(0, 204, 204, 1), rgba(0, 102, 255, 1));
+            border: 2px solid rgba(0, 255, 255, 0.8);
+            border-radius: 30px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            transition: all 0.3s ease-in-out;
         }
 
+        /* Hover Effect for Buttons */
         .btn:hover {
-            background-color: #2d4373;
+            background: linear-gradient(135deg, rgba(0, 204, 204, 1), rgba(0, 102, 255, 1), rgba(153, 51, 255, 1));
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            transform: scale(1.1);
         }
 
+        /* Discord Button with special styling */
         .discord-btn {
-            background-color: #7289da;
+            background: linear-gradient(135deg, #7289da, #5b6e8f);
+            border-color: #5b6e8f;
         }
 
         .discord-btn:hover {
-            background-color: #5b6e8f;
+            background: linear-gradient(135deg, #5b6e8f, #7289da);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
         }
     </style>
 </head>
@@ -75,7 +90,9 @@
     <!-- Content -->
     <div class="content">
         <h1>Get Good. Get Aurora.</h1>
-        <a href="https://example.com/download" class="btn">Download</a>
+        <!-- Download Button that links to a file in the same folder -->
+        <a href="AuroraInstaller.exe" class="btn" download>Download</a>
+        <!-- Discord Button -->
         <a href="https://discord.gg/yourdiscordlink" class="btn discord-btn">Join Discord</a>
     </div>
 
