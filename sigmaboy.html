@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polis Tab Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tab styles */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #444;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #555;
+        }
+
+        .active-tab {
+            background-color: #00bcd4;
+            color: white;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #222;
+            border-top: 1px solid #444;
+        }
+
+        .tab-content.active-content {
+            display: block;
+        }
+
+        /* Add some styling for headings */
+        h2 {
+            color: #00bcd4;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .highlight {
+            color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tab Navigation -->
+    <div class="tabs">
+        <div class="tab active-tab" onclick="showTab(0)">Refund Policy</div>
+        <div class="tab" onclick="showTab(1)">Why Choose Us</div>
+        <div class="tab" onclick="showTab(2)">Undetected Status</div>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content active-content">
+        <h2>Refund Policy</h2>
+        <p>Once you purchase and activate Aurora, it is non-refundable. Please make sure you fully understand the terms before making a purchase.</p>
+        <p>If you experience any issues, contact our support team immediately. We cannot provide refunds for any reason once the product is activated.</p>
+    </div>
+
+    <div class="tab-content">
+        <h2>Why Choose Us?</h2>
+        <p>At Aurora, we offer a superior experience with unmatched performance and reliability. Our cheat is constantly updated, and we pride ourselves on providing excellent customer support. Choose Aurora for an undetected, seamless experience.</p>
+        <p>Unlike other providers, we ensure your safety and gaming experience are top priorities. Join the hundreds of satisfied users who trust Aurora!</p>
+    </div>
+
+    <div class="tab-content">
+        <h2>Undetected Status</h2>
+        <p>Our cheat is undetected and has been thoroughly tested to ensure it works without detection by anti-cheat systems.</p>
+        <p>We take regular precautions and updates to keep the cheat secure and undetected for as long as possible. Our community enjoys a safe and seamless experience, and we ensure that all measures are taken to keep you protected.</p>
+    </div>
+
+    <script>
+        // Function to switch between tabs
+        function showTab(tabIndex) {
+            // Get all tab contents and remove the active class
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active-content'));
+
+            // Get all tabs and remove the active class
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+            // Add the active class to the selected tab and its content
+            contents[tabIndex].classList.add('active-content');
+            tabs[tabIndex].classList.add('active-tab');
+        }
+    </script>
+
+</body>
+</html>
